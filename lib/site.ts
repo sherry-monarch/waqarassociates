@@ -59,7 +59,7 @@ export const projects: Project[] = [
   { slug: "bwc-infrastructure", name: "BWC Infrastructure", sector: "Roads & Infrastructure", location: "Pakistan",
     image: "/projects/bwc/cover.jpg", gallery: []
    },
-  { slug: "jinnah-garden-executive-block", name: "Jinnah Garden Executive Block", sector: "Buildings", location: "Jinnah Garden, Islamabad",
+  { slug: "jinnah-garden-executive-block", name: "Jinnah Garden Executive Block", sector: "Roads & Infrastructure ", location: "Jinnah Garden, Islamabad",
     image: "/projects/jinnah/cover.png", gallery: []
    },
   { slug: "al-shifa-eye-trust-hospital-lahore", name: "Al Shifa Eye Trust Hospital Lahore", sector: "Buildings", location: "Lahore" ,

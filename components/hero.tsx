@@ -46,7 +46,7 @@ export function Hero() {
         </h1>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="pointer-events-auto mt-8 flex flex-wrap items-center gap-4">
           <p className="max-w-md text-lg text-paper/80">Urban development and town planning across Pakistan since 1991. Based in Islamabad.</p>
-          <Button asChild><Link href="/projects">View master plans</Link></Button>
+          <Button asChild><Link href="/projects">View our Projects</Link></Button>
           <Button asChild variant="outline"><Link href="/contact">Talk to us</Link></Button>
         </motion.div>
       </div>
