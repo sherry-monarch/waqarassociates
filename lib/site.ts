@@ -39,8 +39,7 @@ export type Project = {
   gallery?: string[];  // extra photos, shown in a grid on the project page
 };
 export const projects: Project[] = [
-  { slug: "motorway-sialkot-lahore", name: "Motorway Sialkot-Lahore", sector: "Roads & Infrastructure", location: "Sialkot to Lahore", 
-    image: "/projects/motorway/cover.jpg", gallery: [] },
+  
   { slug: "mangla-dam-capacity-increment", name: "Mangla Dam Capacity Increment", sector: "Dams", location: "Mangla" ,
     image: "/projects/mangla/cover.jpg", gallery: []
   },
