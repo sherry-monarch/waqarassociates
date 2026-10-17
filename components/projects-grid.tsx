@@ -17,7 +17,7 @@ export function ProjectsGrid({ initial = "All" }: { initial?: string }) {
           </button>
         ))}
       </div>
-      <motion.div layout className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+      <motion.div layout className="mt-8 grid md:mt-12 gap-x-8 gap-y-10 md:gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">{list.map((p, i) => <ProjectCard key={p.slug} p={p} i={i} />)}</AnimatePresence>
       </motion.div>
       {list.length === 0 && <p className="mt-12 text-ink/60">No projects in this sector yet.</p>}

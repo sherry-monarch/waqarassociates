@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 export function PageHead({ title, sub, eyebrow, visual }: { title: string; sub?: string; eyebrow?: string; visual?: ReactNode }) {
   return (
-    <section className="relative flex min-h-[72svh] items-end overflow-hidden bg-ink px-6 pb-16 pt-40 text-paper">
+    <section className="relative flex min-h-[56svh] md:min-h-[72svh] items-end overflow-hidden bg-ink px-6 pb-10 md:pb-16 pt-32 md:pt-40 text-paper">
       <div className="absolute inset-0">{visual}</div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/60" />
       <div className="pointer-events-none relative z-10 mx-auto w-full max-w-7xl">

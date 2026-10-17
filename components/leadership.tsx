@@ -8,9 +8,9 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export function Leadership() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-28">
+    <section className="mx-auto max-w-7xl px-6 py-16 md:py-28">
       <h2 className="font-display text-4xl font-semibold md:text-6xl">Leadership</h2>
-      <div className="mt-14 grid gap-14 md:grid-cols-2 md:gap-10">
+      <div className="mt-8 md:mt-14 grid gap-10 md:grid-cols-2 md:gap-10">
         {site.leadership.map((p, i) => (
           <article key={p.name} className="group">
             <motion.div

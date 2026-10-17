@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         ) : (
           <Placeholder i={i} className="aspect-[16/8] w-full" />
         )}
-        <div className="mt-14 grid gap-12 md:grid-cols-[2fr_1fr]">
+        <div className="mt-8 md:mt-14 grid gap-12 md:grid-cols-[2fr_1fr]">
           <p className="font-display text-2xl leading-snug md:text-3xl">{p.blurb ?? "Project details will be added soon."}</p>
           <dl className="space-y-5 text-sm">
             {([["Category", p.sector], ["Location", p.location], ["Status", p.status], ["Completion", p.year], ["Size", p.area], ["Scope", p.units]] as const).filter(([, v]) => v).map(([k, v]) => (
@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <Link href="/contact" className="mt-12 inline-block rounded-full bg-ink px-7 py-3 text-sm text-paper hover:bg-navy">Enquire about this project</Link>
       </section>
       {p.gallery && p.gallery.length > 0 && (
-        <section className="mx-auto max-w-7xl px-6 pb-20">
+        <section className="mx-auto max-w-7xl px-6 pb-12 md:pb-20">
           <h2 className="font-display text-3xl font-semibold">Gallery</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {p.gallery.map((src, n) => (
@@ -45,7 +45,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </div>
         </section>
       )}
-      <section className="mx-auto max-w-7xl px-6 pb-28">
+      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-28">
         <h2 className="font-display text-3xl font-semibold">More projects</h2>
         <div className="mt-10 grid gap-8 md:grid-cols-3">{more.map((m) => <ProjectCard key={m.slug} p={m} i={projects.indexOf(m)} />)}</div>
       </section>

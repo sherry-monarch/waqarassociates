@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <>
       <PageHead eyebrow="04 / Contact" visual={<Crosshair />} title="Contact" sub="Tell us what you're looking for and we'll reply within two working days." />
-      <section className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-16 px-6 py-12 md:py-20 md:grid-cols-2">
         <div className="space-y-8">
           <div><p className="text-sm uppercase tracking-[0.2em] text-navy">Office</p><p className="mt-2 text-lg">{site.address}</p></div>
           <div>

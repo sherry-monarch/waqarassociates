@@ -20,12 +20,12 @@ function Logo({ c }: { c: Client }) {
 
 export function Clients() {
   return (
-    <section className="overflow-hidden bg-paper py-24">
+    <section className="overflow-hidden bg-paper py-14 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <p className="flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-navy"><span className="h-px w-10 bg-gold" />Our clients</p>
         <h2 className="mt-5 font-display text-4xl font-semibold md:text-6xl">Who we've built for</h2>
       </div>
-      <div className="group/m mt-10 py-6 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
+      <div className="group/m mt-6 py-4 [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
         <ul className="flex w-max animate-marquee items-center group-hover/m:[animation-play-state:paused] motion-reduce:animate-none">
           {[...clients, ...clients].map((c, i) => (
             <li key={i} className="mx-10" aria-hidden={i >= clients.length}><Logo c={c} /></li>

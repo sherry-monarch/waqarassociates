@@ -23,10 +23,10 @@ export function Process() {
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start 75%", "end 55%"] });
   const w = useTransform(p, [0, 1], ["0%", "100%"]);
   return (
-    <section ref={ref} className="bg-ink px-6 py-28 text-paper">
+    <section ref={ref} className="bg-ink px-6 py-16 md:py-28 text-paper">
       <div className="mx-auto max-w-7xl">
         <h2 className="font-display text-4xl font-semibold md:text-6xl">How a plan becomes a city</h2>
-        <div className="relative mt-16">
+        <div className="relative mt-10 md:mt-16">
           <div className="absolute left-0 right-0 top-3 h-px bg-paper/15" />
           <motion.div style={{ width: w }} className="absolute left-0 top-3 h-px bg-gold" />
           <div className="relative grid gap-12 md:grid-cols-4">{steps.map((s, i) => <Step key={s.n} s={s} i={i} p={p} />)}</div>
