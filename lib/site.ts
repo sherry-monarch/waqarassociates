@@ -32,11 +32,6 @@ export const nav = [
   { href: "/about", label: "Company" }, { href: "/expertise", label: "Expertise" },
   { href: "/projects", label: "Projects" }, { href: "/contact", label: "Contact" },
 ];
-// Only slug, name, sector and location are required. Optional fields appear on the
-// project page when filled in, e.g.  status: "Completed", year: "2024",
-// area: "18 km", units: "Two lanes", blurb: "A short description.",
-// image: "/projects/mohmand-dam/cover.jpg",
-// gallery: ["/projects/mohmand-dam/1.jpg", "/projects/mohmand-dam/2.jpg"]
 export type Project = {
   slug: string; name: string; sector: string; location: string;
   status?: "Under construction" | "Completed"; year?: string; area?: string; units?: string; blurb?: string;
