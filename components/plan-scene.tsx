@@ -73,7 +73,7 @@ function Plan({ onPhase, reduced }: { onPhase: (i: number) => void; reduced: boo
   useLayoutEffect(() => {
     dummy.scale.set(0, 0, 0); dummy.updateMatrix();
     plan.slabs.forEach((s, i) => { slabRef.current.setMatrixAt(i, dummy.matrix); slabRef.current.setColorAt(i, COLOR[s.zone]); });
-    plan.bldgs.forEach((b, i) => { bRef.current.setMatrixAt(i, dummy.matrix); bRef.current.setColorAt(i, COLOR[b.zone].clone().offsetHSL(0, 0, 0.08)); });
+    plan.bldgs.forEach((b, i) => { bRef.current.setMatrixAt(i, dummy.matrix); bRef.current.setColorAt(i, COLOR[b.zone]); });
     [slabRef.current, bRef.current].forEach((m) => { m.instanceMatrix.needsUpdate = true; m.instanceColor!.needsUpdate = true; });
   }, [plan, dummy]);
 

@@ -7,8 +7,8 @@ export const PHASES = [
   { name: "Development", at: T.build },
 ];
 export const ZONES = [
-  { key: "res", name: "Residential", color: "#4A66C9" },
-  { key: "com", name: "Commercial", color: "#EAC22E" },
+  { key: "res", name: "Residential", color: "#2C44A6" },
+  { key: "com", name: "Commercial", color: "#C29412" },
   { key: "green", name: "Parks and open space", color: "#A9BDF0" },
   { key: "pub", name: "Public and civic", color: "#FFFFFF" },
 ] as const;
