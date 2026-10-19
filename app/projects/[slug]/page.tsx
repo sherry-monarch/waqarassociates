@@ -3,7 +3,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Placeholder } from "@/components/placeholder";
 import { PageHead } from "@/components/page-head";
-import { PlotGrid } from "@/components/page-visuals";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/lib/site";
 export const generateStaticParams = () => projects.map((p) => ({ slug: p.slug }));
@@ -14,8 +13,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const p = projects[i], more = projects.filter((x) => x.slug !== slug).slice(0, 3);
   return (
     <>
-      <PageHead eyebrow={p.status ? `${p.sector} / ${p.status}` : p.sector} visual={<PlotGrid />} title={p.name} sub={p.location} />
-      <section className="mx-auto max-w-7xl px-6 py-16">
+<PageHead eyebrow={p.status ? `${p.sector} / ${p.status}` : p.sector} title={p.name} sub={p.location} />      <section className="mx-auto max-w-7xl px-6 py-16">
         {p.image ? (
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-ink md:aspect-[16/8]">
             <Image src={p.image} alt={p.name} fill priority sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" />
@@ -24,7 +22,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <Placeholder i={i} className="aspect-[16/8] w-full" />
         )}
         <div className="mt-8 md:mt-14 grid gap-12 md:grid-cols-[2fr_1fr]">
-          <p className="font-display text-2xl leading-snug md:text-3xl">{p.blurb ?? "Project details will be added soon."}</p>
+
+<p className="font-display text-2xl leading-snug md:text-3xl">
+  {p.description ?? p.blurb ?? "Project details will be added soon."}
+</p>
           <dl className="space-y-5 text-sm">
             {([["Category", p.sector], ["Location", p.location], ["Status", p.status], ["Completion", p.year], ["Size", p.area], ["Scope", p.units]] as const).filter(([, v]) => v).map(([k, v]) => (
               <div key={k} className="flex justify-between border-b border-ink/15 pb-3"><dt className="text-ink/60">{k}</dt><dd className="font-medium">{v}</dd></div>
