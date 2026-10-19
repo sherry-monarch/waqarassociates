@@ -1,3 +1,4 @@
+// All copy lives here. Items marked PLACEHOLDER are invented and should be replaced.
 export const FOUNDED = 1991;
 export const site = {
   name: "Waqar Associates",
@@ -21,8 +22,9 @@ export const site = {
   ],
   sectors: ["Town Development", "Roads & Infrastructure", "Dams", "Buildings", "Airfields", "Society Gates"],
   leadership: [
-    { name: "NajeebUllah Cheema", role: "Chief Executive Officer", photo: "/ceo.png", bio: "As Chief Executive Officer, NajeebUllah Cheema sets the direction of Waqar Associates and leads its growth across Pakistan. He oversees the company's major town development and infrastructure projects, and keeps the company to the standard of quality and honest dealing it has worked by since 1991." },
     { name: "ZabiUllah Cheema", role: "Managing Director", photo: "/md.png", bio: "As Managing Director, ZabiUllah Cheema runs the company's day-to-day operations, from planning and site execution to scheduling, budgets and client relationships. He makes sure every project, from roads and utilities to commercial buildings, is delivered on time and to specification." },
+    { name: "NajeebUllah Cheema", role: "Chief Executive Officer", photo: "/ceo.png", bio: "As Chief Executive Officer, NajeebUllah Cheema sets the direction of Waqar Associates and leads its growth across Pakistan. He oversees the company's major town development and infrastructure projects, and keeps the company to the standard of quality and honest dealing it has worked by since 1991." },
+    { name: "Ali Hamza Cheema", role: "Financial Manager", photo: "/fm.png", bio: "Responsible for the company's accounts, budgeting and financial planning, the Financial Manager keeps project costs under control, manages payments to suppliers and subcontractors, and makes sure every project is financially sound from the first estimate to final handover." },
   ],
   email: "zabiullahcheema00@gmail.com",
   phone: "0300 2179167 / 0335 0888999",
@@ -32,6 +34,11 @@ export const nav = [
   { href: "/about", label: "Company" }, { href: "/expertise", label: "Expertise" },
   { href: "/projects", label: "Projects" }, { href: "/contact", label: "Contact" },
 ];
+// Only slug, name, sector and location are required. Optional fields appear on the
+// project page when filled in, e.g.  status: "Completed", year: "2024",
+// area: "18 km", units: "Two lanes", blurb: "A short description.",
+// image: "/projects/mohmand-dam/cover.jpg",
+// gallery: ["/projects/mohmand-dam/1.jpg", "/projects/mohmand-dam/2.jpg"]
 export type Project = {
   slug: string; name: string; sector: string; location: string;
   status?: "Under construction" | "Completed"; year?: string; area?: string; units?: string; blurb?: string;
