@@ -1,12 +1,61 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Cable,
+  ClipboardCheck,
+  Construction,
+  Droplets,
+  Hammer,
+  HardHat,
+  LandPlot,
+  Route,
+  Ruler,
+  ShieldCheck,
+  Truck,
+  Warehouse,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import { Counter } from "./counter";
 import { ProjectCard } from "./project-card";
 import { Button } from "@/components/ui/button";
 import { projects, site } from "@/lib/site";
 const ease = [0.16, 1, 0.3, 1] as const;
+
+/**
+ * Each expertise card gets its own icon, never repeated.
+ * 1. If the title matches a rule below, that icon is used (if not already taken).
+ * 2. Otherwise the next unused icon from the pool is used.
+ * Edit the patterns to match your titles.
+ */
+const iconRules: [RegExp, LucideIcon][] = [
+  [/road|highway|street|bridge/i, Route],
+  [/town|housing|society|develop|land/i, LandPlot],
+  [/infra|utilit|electric|gas/i, Cable],
+  [/water|sewer|drain/i, Droplets],
+  [/building|commercial|residential|structure/i, Building2],
+  [/design|plan|engineer|survey/i, Ruler],
+  [/manage|schedul|cost|budget/i, ClipboardCheck],
+  [/quality|safety|inspect/i, ShieldCheck],
+  [/civil|construct/i, Construction],
+];
+const iconPool: LucideIcon[] = [
+  Route, LandPlot, Cable, Building2, Ruler, ClipboardCheck, ShieldCheck,
+  Construction, Droplets, HardHat, Hammer, Truck, Warehouse, Wrench,
+];
+
+function assignIcons(titles: string[]): LucideIcon[] {
+  const used = new Set<LucideIcon>();
+  return titles.map((t) => {
+    const hit = iconRules.find(([re, ic]) => re.test(t) && !used.has(ic))?.[1];
+    const icon = hit ?? iconPool.find((ic) => !used.has(ic)) ?? HardHat;
+    used.add(icon);
+    return icon;
+  });
+}
 
 export function Intro() {
   return (
@@ -26,18 +75,29 @@ export function Intro() {
 }
 
 export function Expertise() {
+  const icons = assignIcons(site.expertise.map((e) => e.title));
   return (
     <section className="bg-paper pb-16 md:pb-28">
       <div className="mx-auto grid max-w-7xl gap-px bg-ink/15 px-0 md:grid-cols-2 lg:grid-cols-4">
-        {site.expertise.map((e) => (
-          <motion.div key={e.title} whileHover="h" initial="r" className="relative overflow-hidden bg-paper p-6 md:p-8">
-            <motion.div variants={{ r: { y: "100%" }, h: { y: 0 } }} transition={{ duration: 0.55, ease }} className="absolute inset-0 bg-navy" />
-            <motion.div variants={{ r: { color: "#0B1533" }, h: { color: "#F3F4F8" } }} transition={{ duration: 0.4 }} className="relative md:min-h-[230px]">
-              <h3 className="font-display text-2xl font-semibold">{e.title}</h3>
-              <p className="mt-3 max-w-sm md:mt-6 leading-relaxed opacity-80">{e.body}</p>
+        {site.expertise.map((e, i) => {
+          const Icon = icons[i];
+          return (
+            <motion.div key={e.title} whileHover="h" initial="r" className="relative overflow-hidden bg-paper p-6 md:p-8">
+              <motion.div variants={{ r: { y: "100%" }, h: { y: 0 } }} transition={{ duration: 0.55, ease }} className="absolute inset-0 bg-navy" />
+              <motion.div variants={{ r: { color: "#0B1533" }, h: { color: "#F3F4F8" } }} transition={{ duration: 0.4 }} className="relative md:min-h-[230px]">
+                <motion.span
+                  variants={{ r: { color: "#0B1533" }, h: { color: "#EAC22E" } }}
+                  transition={{ duration: 0.4 }}
+                  className="inline-flex"
+                >
+                  <Icon className="size-9 md:size-10" strokeWidth={1.4} aria-hidden="true" />
+                </motion.span>
+                <h3 className="mt-5 font-display text-2xl font-semibold md:mt-6">{e.title}</h3>
+                <p className="mt-3 max-w-sm md:mt-4 leading-relaxed opacity-80">{e.body}</p>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
