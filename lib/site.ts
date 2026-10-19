@@ -27,7 +27,7 @@ export const site = {
     { name: "Ali Hamza Cheema", role: "Financial Manager", photo: "/fm.png", bio: "Responsible for the company's accounts, budgeting and financial planning, the Financial Manager keeps project costs under control, manages payments to suppliers and subcontractors, and makes sure every project is financially sound from the first estimate to final handover." },
   ],
   email: "zabiullahcheema00@gmail.com",
-  phone: "0300 2179167 / 0335 0888999",
+  phone: "+92 300 2179167 / +92 335 0888999",
   address: "Plot 12 A, First Floor, Monarch Heights, Jinnah Garden, Islamabad",
 };
 export const nav = [
