@@ -171,30 +171,23 @@ export function Leadership() {
       )}
 
       {/* 2 + 3. MD (larger) and Financial Manager (smaller) */}
-      <div className="mt-16 grid items-start gap-12 md:mt-24 md:grid-cols-[1.25fr_1fr] md:gap-10 lg:gap-16">
-        {md && (
-          <article className="group">
-            <Photo p={md} sizes="(min-width: 768px) 50vw, 100vw" />
-            <Details
-              p={md}
-              roleClass="mt-6 text-sm tracking-[0.2em]"
-              nameClass="mt-3 text-3xl md:text-4xl"
-              bioClass="mt-4 text-base md:text-lg"
-            />
-          </article>
-        )}
-        {rest.map((p) => (
-          <article key={p.role} className="group">
-            <Photo p={p} sizes="(min-width: 768px) 40vw, 100vw" className="mx-auto max-w-sm md:max-w-none" />
-            <Details
-              p={p}
-              roleClass="mt-6 text-xs tracking-[0.2em]"
-              nameClass="mt-3 text-2xl md:text-3xl"
-              bioClass="mt-4 text-base"
-            />
-          </article>
-        ))}
-      </div>
+      <div className="mt-16 grid items-start gap-12 md:mt-24 md:grid-cols-2 md:gap-10 lg:gap-16">
+  {[md, ...rest].filter(Boolean).map((p) => (
+    <article key={p.role} className="group">
+      <Photo
+        p={p}
+        sizes="(min-width: 768px) 50vw, 100vw"
+        className="mx-auto w-full max-w-sm md:max-w-none"
+      />
+      <Details
+        p={p}
+        roleClass="mt-6 text-sm tracking-[0.2em]"
+        nameClass="mt-3 text-3xl md:text-4xl"
+        bioClass="mt-4 text-base md:text-lg"
+      />
+    </article>
+  ))}
+</div>
     </section>
   );
 }
