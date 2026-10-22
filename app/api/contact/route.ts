@@ -28,12 +28,21 @@ export async function POST(req: Request) {
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const { SMTP_HOST = "smtp.hostinger.com", SMTP_PORT = "465", SMTP_USER, SMTP_PASS, CONTACT_TO } = process.env;
+  console.log("SMTP env keys present:", Object.keys(process.env).filter((k) => k.startsWith("SMTP") || k === "CONTACT_TO"));
+console.log("cwd:", process.cwd());
   if (!SMTP_USER || !SMTP_PASS) {
     console.error("Contact form: SMTP_USER or SMTP_PASS is not set");
     return Response.json({ error: "Email is not configured" }, { status: 500 });
   }
 
   const port = Number(SMTP_PORT);
+  console.log({
+  host: SMTP_HOST,
+  port: SMTP_PORT,
+  user: JSON.stringify(SMTP_USER),
+  passLength: SMTP_PASS.length,
+  passFirstLast: SMTP_PASS[0] + "..." + SMTP_PASS[SMTP_PASS.length - 1],
+});
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port,

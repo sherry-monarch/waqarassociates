@@ -24,7 +24,7 @@ export const site = {
   leadership: [
     { name: "ZabiUllah Cheema", role: "Managing Director", photo: "/md.png", bio: "As Managing Director, ZabiUllah Cheema runs the company's day-to-day operations, from planning and site execution to scheduling, budgets and client relationships. He makes sure every project, from roads and utilities to commercial buildings, is delivered on time and to specification." },
     { name: "NajeebUllah Cheema", role: "Chief Executive Officer", photo: "/ceo.png", bio: "As Chief Executive Officer, NajeebUllah Cheema sets the direction of Waqar Associates and leads its growth across Pakistan. He oversees the company's major town development and infrastructure projects, and keeps the company to the standard of quality and honest dealing it has worked by since 1991." },
-    { name: "Ali Hamza Cheema", role: "Financial Director", photo: "/fm.png", bio: "Responsible for the company's accounts, budgeting and financial planning, the Financial Director keeps project costs under control, manages payments to suppliers and subcontractors, and makes sure every project is financially sound from the first estimate to final handover." },
+    { name: "Ali Hamza Cheema", role: "Director Finance", photo: "/fm.png", bio: "Responsible for the company's accounts, budgeting and financial planning, the Director Finance keeps project costs under control, manages payments to suppliers and subcontractors, and makes sure every project is financially sound from the first estimate to final handover." },
   ],
   email: "zabiullahcheema00@gmail.com",
   phone: "+92 300 2179167 / +92 335 0888999",
