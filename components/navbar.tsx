@@ -34,7 +34,7 @@ export function Navbar() {
             <Image src="/logo.png" alt="" width={68} height={45} priority className="h-11 w-auto md:h-12" />
             <span className="flex flex-col leading-none">
               <span className="font-display text-lg font-semibold tracking-tight md:text-xl">{site.name}</span>
-              <span className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.28em] text-gold">Since {FOUNDED}</span>
+              <span className="mt-1.5 text-[13px] font-medium uppercase tracking-[0.28em] text-gold">Since {FOUNDED}</span>
             </span>
           </Link>
 
